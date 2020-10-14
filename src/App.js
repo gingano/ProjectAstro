@@ -1,25 +1,26 @@
 import React from 'react'
-import { Router, Stack, Scene } from 'react-native-router-flux'
 import { Provider } from 'react-redux'
+import { NavigationContainer } from '@react-navigation/native'
+import { createStackNavigator } from '@react-navigation/stack'
 import HomeView from './components/HomeView'
 import DetailedView from './components/DetailedView'
 import store from './redux/store'
 
+const Stack = createStackNavigator()
+
 const App = () => {
   return (
     <Provider store={store}>
-      <Router>
-        <Stack key="root">
-          <Scene
-            key="home"
-            component={HomeView}
-            title="home"
-            initial={true}
-            hideNavBar={true}
-          />
-          <Scene key="detailed" component={DetailedView} hideNavBar={true} />
-        </Stack>
-      </Router>
+      <NavigationContainer>
+        <Stack.Navigator
+          screenOptions={{
+            headerShown: false,
+          }}
+        >
+          <Stack.Screen name="Home" component={HomeView} />
+          <Stack.Screen name="Detailed" component={DetailedView} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
   )
 }
