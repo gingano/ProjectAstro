@@ -5,14 +5,22 @@
   "scripts": {
     "android": "react-native run-android",
     "ios": "react-native run-ios",
-    "start": "react-native start",
+    "start": "react-native start --reset-cache",
     "test": "jest",
     "lint": "eslint . --fix"
   },
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.3",
-    "react-router-native": "^5.2.0"
+    "react-native-gesture-handler": "^1.8.0",
+    "react-native-reanimated": "^1.13.1",
+    "react-native-router-flux": "^4.2.0",
+    "react-native-screens": "^2.11.0",
+    "react-redux": "^7.2.1",
+    "react-router-native": "^5.2.0",
+    "redux": "^4.0.5",
+    "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

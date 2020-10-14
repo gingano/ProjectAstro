@@ -1,15 +1,24 @@
 import React from 'react'
-import { View, Text } from 'react-native'
-import { Link } from 'react-router-native'
+import { View, Text, Button } from 'react-native'
+import { Actions } from 'react-native-router-flux'
+import { useSelector, useDispatch } from 'react-redux'
 
 const HomeView = () => {
+  const signState = useSelector(({ sign }) => sign)
+  const dispatch = useDispatch()
+
+  console.log(signState)
+
   return (
     <>
       <View>
         <Text>Home</Text>
-        <Link to="/detailed">
-          <Text>go to detailed</Text>
-        </Link>
+        <Button
+          title="Detailed"
+          onPress={() => {
+            Actions.detailed()
+          }}
+        />
       </View>
     </>
   )
