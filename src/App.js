@@ -1,13 +1,14 @@
 import React from 'react'
-import { View, Text } from 'react-native'
+import { NativeRouter, Route } from 'react-router-native'
+import HomeView from './components/HomeView'
+import DetailedView from './components/DetailedView'
 
 const App = () => {
   return (
-    <>
-      <View>
-        <Text>ProjectAstro</Text>
-      </View>
-    </>
+    <NativeRouter>
+      <Route exact path="/" component={HomeView} />
+      <Route exact path="/detailed" component={DetailedView} />
+    </NativeRouter>
   )
 }
 
